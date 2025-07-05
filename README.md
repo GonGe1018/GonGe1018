@@ -1,16 +1,26 @@
-## Hi there 👋
+# plz FIX THE BAN AI
 
-<!--
-**GonGe1018/GonGe1018** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[@instagram](https://github.com/instagram)
+</br>
+[@Meta](https://github.com/facebook)
+</br>
+[@MetaResearch](https://github.com/facebookresearch)
 
-Here are some ideas to get you started:
+```js
+class MetaAI {
+  private gpu;
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+  constructor(GPUs: unknown) {
+    // @ts-expect-error: 'this.gpu' is declared but its value is never read.
+    this.gpu = GPUs;
+  }
+  public isBanTarget(userId: string): boolean {
+    return Math.random() > 0.5;
+  }
+}
+
+const ai = new MetaAI(ManyGPUs);
+const users = await getUsers();
+
+users.forEach(user => ai.isBanTarget(user.id));
+```
